@@ -44,12 +44,6 @@ def ranked_details(anime_id, fields, access_token):
     else:
         print(f"Failed to retrieve information. Status code: {response.status_code}")
 
-# helper writer function to write to a file
-# def writer(path, array):
-#     with open(path, "w") as file:
-#         for item in array:
-#             file.write(str(item) + "\n")
-
 # requires token and returns nothing
 # writes anime ids to file
 def anime_ids(limit, init_offset):
@@ -93,8 +87,7 @@ def anime_details():
                 anime_dict[field].append(anime_details[field])
         if i % 100 == 0:
             print("Finished with anime rank #" + str(i))
-            print("Just give it a bit to write the relevant data :^)")
-            time.sleep(60) # arbitrary number to bypass api call frequency
+            time.sleep(180) # arbitrary number to bypass api call frequency (failure & response code 503)
 
     # use pandas to format the data into a dataframe and write to tsv
     df = pd.DataFrame.from_dict(anime_dict)
