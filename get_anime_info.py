@@ -68,9 +68,11 @@ def anime_ids(limit, init_offset):
 # requires token and returns nothing
 # writes relevant anime details to tsv
 def anime_details():
+    # relevant fields for training
     fields = "title, mean, rank, popularity, genres"
     fields_list = ["title", "mean", "rank", "popularity", "genres"]
     print("Using token to grab anime details...\n")
+    print("Heads up, this might take awhile :^)\n")
 
     # loop over ids to get info
     anime_dict = {field: [] for field in fields_list}
@@ -92,7 +94,7 @@ def anime_details():
 
     # use pandas to format the data into a dataframe and write to tsv
     df = pd.DataFrame.from_dict(anime_dict)
-    df.to_csv(path_or_buf="./data.tsv", sep="\t")
+    df.to_csv(path_or_buf="./animes.tsv", sep="\t")
 
 if __name__ == '__main__':
     piss = input("Input amount of anime to grab: ")
