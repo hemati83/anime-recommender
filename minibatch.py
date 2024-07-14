@@ -1,4 +1,4 @@
-from sklearn.cluster import KMeans
+from sklearn.cluster import MiniBatchKMeans
 import pandas as pd
 
 # import dataframes
@@ -7,11 +7,11 @@ training_data = pd.read_csv("./training_data.tsv", sep="\t")
 
 # designate training data & initialize K-means clustering
 X = training_data
-kmeans = KMeans(n_clusters=50, random_state=83)
-kmeans.fit(X)
+minibatch = MiniBatchKMeans(n_clusters=50, random_state=83)
+minibatch.fit(X)
 
 # get data cluster label for each anime
-cluster_labels = kmeans.labels_
+cluster_labels = minibatch.labels_
 
 # get input and acquire respective data cluster label
 user_in = input("Input the title of the anime you enjoyed exactly as it appears on MyAnimeList (CASE-SENSITIVE)\nIf necessary, copy and paste the title from animes.tsv: ")
