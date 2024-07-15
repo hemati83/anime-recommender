@@ -1,16 +1,14 @@
-from sklearn.cluster import KMeans
+from sklearn.mixture import GaussianMixture
 import pandas as pd
 
 # import dataframes
 animes = pd.read_csv("./animes.tsv", sep="\t")
 training_data = pd.read_csv("./training_data.tsv", sep="\t")
 
-# designate training data & initialize K-Means clustering
+# designate training data & initialize Gaussian Mixture clustering
 X = training_data
-kmeans = KMeans(n_clusters=50, random_state=83)
-
-# get cluster label for each anime
-cluster_labels = kmeans.fit_predict(X)
+gaussian = GaussianMixture(n_components=50)
+cluster_labels = gaussian.fit_predict(X)
 
 # get input and acquire respective data cluster label
 user_in = input("Input the title of the anime you enjoyed exactly as it appears on MyAnimeList (CASE-SENSITIVE)\nIf necessary, copy and paste the title from animes.tsv: ")
