@@ -8,6 +8,9 @@
 
 **Step 3:** Run `get_anime_info.py`
 * Requires `token.json`
-* Writes the anime info to `data.tsv`
+* Writes the anime info to `animes.tsv`
 
-**Step 4:** Run `binary_df.py` to clean and format the data from `data.tsv` for training
+**Step 4:** Run `binary_df.py` to clean and format the data from `animes.tsv` for training
+* Writes the data to `training_data.tsv`
+
+**Step 5** Run `recommender.py`

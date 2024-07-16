@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 # import tsv to dataframe and remove brackets from genre lists
-df = pd.read_csv("./data.tsv", sep="\t")
+df = pd.read_csv("./animes.tsv", sep="\t")
 df["genres"] = df["genres"].str.strip("[]")
 
 # create zeros dataframe of all genres and cast values appropriately for training
