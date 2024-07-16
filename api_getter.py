@@ -3,7 +3,7 @@ import requests
 import secrets
 
 
-CLIENT_ID = 'ddd905e49d1203b1b5d52f471cd4353c'
+CLIENT_ID = 'YOUR CLIENT ID'
 CLIENT_SECRET = 'YOUR CLIENT SECRET'
 
 

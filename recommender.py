@@ -73,7 +73,7 @@ if __name__ == "__main__":
 
     # initialize model based on user input
     model = int(input("Choose which type of model you want a recommendation from.\nType 1 for K-Means, 2 for Mini Batch K-Means, 3 for Gaussian Mixture Model, 4 for Spectral Clustering (this one takes a while): "))
-    clusters = cluster(model)
+    cluster_labels = cluster(model)
 
     # display recommendations
-    print_suggestions(clusters)
+    print_suggestions(cluster_labels)
