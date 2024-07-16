@@ -39,12 +39,15 @@ def cluster(model):
 
 # requires array of cluster labels and returns nothing
 def print_suggestions(cluster_labels):
-    # get input and acquire respective data cluster label
+    # get user input
     user_in = input("Input the title of the anime you enjoyed exactly as it appears on MyAnimeList (CASE-SENSITIVE).\nIf necessary, copy and paste the title from animes.tsv: ")
-    # Handle invalid input
+    
+    # handle invalid input
     if user_in not in animes["title"].tolist(): 
         print("Invalid input.")
         exit()
+
+    # get the cluster label for the user input
     watched_index = animes[animes["title"] == user_in].index.values
     target_cluster = cluster_labels[watched_index[0]]
 

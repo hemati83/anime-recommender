@@ -13,7 +13,7 @@ zeros = zeros.astype(int)
 
 # create binary matrix for genres
 for i in range(len(df)):
-    # strip strings and convert to lists of genres per anime
+    # strip genre strings and convert to lists of genres per anime
     genre_string = df.iloc[i]["genres"]
     genre_string = genre_string.replace("'", "").replace(",", "")
     genre_list = genre_string.split()
